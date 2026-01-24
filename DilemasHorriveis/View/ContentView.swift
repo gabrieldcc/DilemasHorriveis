@@ -27,7 +27,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            modoAtual.gradient
+            modoAtual.color
                 .ignoresSafeArea()
 
             VStack(spacing: 32) {

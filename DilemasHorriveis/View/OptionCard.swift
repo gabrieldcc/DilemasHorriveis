@@ -25,17 +25,17 @@ struct OptionCard: View {
         }
         .padding()
         .frame(maxWidth: .infinity, minHeight: 140)
-        .background(
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color.white.opacity(0.1))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(
-                            isPesado ? Color.red.opacity(0.8) : Color.white.opacity(0.2),
-                            lineWidth: isPesado ? 2 : 1
-                        )
-                )
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 24))
+        .overlay(
+            RoundedRectangle(cornerRadius: 24)
+                .stroke(Color.white.opacity(0.1))
         )
+
         .animation(.easeInOut, value: isPesado)
     }
+}
+
+#Preview {
+    ModoSelectionView()
 }

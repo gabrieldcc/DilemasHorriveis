@@ -46,6 +46,14 @@ class DilemasViewModel: ObservableObject {
     func proximaPergunta() {
         withAnimation(.spring()) {
             perguntaAtual =  QuestionsManager.getAllQuestions().randomElement()!
+            switch modo {
+            case .leve:
+                perguntaAtual = PerguntasLeves.perguntas.randomElement()
+            case .pesado:
+                perguntaAtual = PerguntasPesadas.perguntas.randomElement()
+            case .nerd:
+                perguntaAtual = PerguntasNerd.perguntas.randomElement()
+            }
         }
         if perguntasRestantes.isEmpty {
             acabouPerguntas = true

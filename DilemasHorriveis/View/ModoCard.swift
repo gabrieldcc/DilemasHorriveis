@@ -12,7 +12,7 @@ struct ModoCard: View {
 
     var body: some View {
         ZStack {
-            modo.gradient
+            modo.color
 
             HStack {
                 Text(modo.emoji)

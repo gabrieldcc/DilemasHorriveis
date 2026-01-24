@@ -105,12 +105,6 @@ class PerguntasPesadas {
         
         Pergunta(
             titulo: "O que você prefere?",
-            opcaoA: "Viver no mundo de The Walking Dead",
-            opcaoB: "Viver no mundo de Round 6",
-            modo: .pesado
-        ),
-        Pergunta(
-            titulo: "O que você prefere?",
             opcaoA: "Nunca mais poder se depilar",
             opcaoB: "Nenhum desodorante funcionar em você",
             modo: .pesado

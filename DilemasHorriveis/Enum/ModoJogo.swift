@@ -30,28 +30,20 @@ enum ModoJogo: String, CaseIterable, Identifiable {
         }
     }
 
-    var gradient: LinearGradient {
+    var color: Color {
         switch self {
         case .leve:
-            return LinearGradient(
-                colors: [.black, .gray.opacity(0.8)],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+            return DilemaColors.orangePrimary.opacity(0.8)
 
         case .pesado:
-            return LinearGradient(
-                colors: [.black, .red.opacity(0.85)],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+            return DilemaColors.blackBase
 
         case .nerd:
-            return LinearGradient(
-                colors: [.black, .purple.opacity(0.85)],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+            return DilemaColors.orangeSoft
         }
     }
+}
+
+#Preview {
+    ModoSelectionView()
 }

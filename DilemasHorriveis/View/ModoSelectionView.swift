@@ -11,11 +11,8 @@ struct ModoSelectionView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                LinearGradient(
-                    colors: [.black, .gray.opacity(0.7)],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
+               
+                DilemaColors.blackBase
                 .ignoresSafeArea()
 
                 VStack(spacing: 24) {
@@ -24,7 +21,7 @@ struct ModoSelectionView: View {
                     Text("Dilemas Horríveis")
                         .font(.largeTitle)
                         .fontWeight(.black)
-                        .foregroundColor(.white)
+                        .foregroundColor(DilemaColors.orangePrimary.opacity(0.8))
 
                     Text("Escolha o modo")
                         .font(.headline)
@@ -36,14 +33,6 @@ struct ModoSelectionView: View {
                         ForEach(ModoJogo.allCases) { modo in
                             NavigationLink {
                                 ContentView(modo: modo)
-                                    .navigationBarBackButtonHidden(true)
-                                    .toolbar {
-                                        ToolbarItem(placement: .navigationBarLeading) {
-                                            Button("Voltar") {
-                                            }
-                                            .foregroundColor(.white) 
-                                        }
-                                    }
                             } label: {
                                 ModoCard(modo: modo)
                             }
@@ -57,3 +46,8 @@ struct ModoSelectionView: View {
         }
     }
 }
+
+#Preview {
+    ModoSelectionView()
+}
+
