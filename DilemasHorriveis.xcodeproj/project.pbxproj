@@ -114,6 +114,7 @@
 		B6320D9D2F22E047004CA643 /* DilemasHorriveis */ = {
 			isa = PBXGroup;
 			children = (
+				B6C62A2A2F24540A00C10F29 /* ViewModel */,
 				B6320DB12F22E0A8004CA643 /* View */,
 				B6320DB02F22E09D004CA643 /* Data */,
 				B6320DAF2F22E081004CA643 /* Enum */,
@@ -180,13 +181,36 @@
 		B6320DB12F22E0A8004CA643 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B6320DB82F239982004CA643 /* ModoCard.swift */,
-				B6320DB62F239820004CA643 /* ModoSelectionView.swift */,
-				B6320DB42F22E4C8004CA643 /* OptionCard.swift */,
-				B6320DB22F22E146004CA643 /* QuestionManager.swift */,
-				B6320D992F22E047004CA643 /* ContentView.swift */,
+				B6C62A2C2F24554F00C10F29 /* Components */,
+				B6C62A2B2F24553D00C10F29 /* Screens */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B6C62A2A2F24540A00C10F29 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B6320DB22F22E146004CA643 /* QuestionManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B6C62A2B2F24553D00C10F29 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B6320DB62F239820004CA643 /* ModoSelectionView.swift */,
+				B6320D992F22E047004CA643 /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B6C62A2C2F24554F00C10F29 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B6320DB82F239982004CA643 /* ModoCard.swift */,
+				B6320DB42F22E4C8004CA643 /* OptionCard.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

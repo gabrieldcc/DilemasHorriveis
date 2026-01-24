@@ -10,9 +10,23 @@ class DilemasViewModel: ObservableObject {
     @Published var perguntaAtual: Pergunta?
     @Published var acabouPerguntas = false
     @Published var erroSemPerguntas = false
+    @Published var indiceAtual: Int = 0
     private let modo: ModoJogo
     private var perguntasRestantes: [Pergunta] = []
- 
+    
+    var totalPerguntas: Int {
+        perguntasRestantes.count
+    }
+    
+    var progressoTexto: String {
+        "\(indiceAtual + 1) de \(totalPerguntas)"
+    }
+    
+    var progressoPercentual: Double {
+        guard totalPerguntas > 0 else { return 0 }
+        return Double(indiceAtual + 1) / Double(totalPerguntas)
+    }
+    
 
 
     init(modo: ModoJogo) {
@@ -58,6 +72,14 @@ class DilemasViewModel: ObservableObject {
         if perguntasRestantes.isEmpty {
             acabouPerguntas = true
         }
+        
+        guard indiceAtual + 1 < perguntasRestantes.count else {
+            perguntaAtual = nil
+            return
+        }
+        
+        indiceAtual += 1
+        perguntaAtual = perguntasRestantes[indiceAtual]
     }
     
     private func resetarPerguntas() {
