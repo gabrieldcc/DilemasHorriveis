@@ -84,12 +84,13 @@ class DilemasViewModel: ObservableObject {
     
     private func resetarPerguntas() {
         perguntasRestantes =  QuestionsManager.getAllQuestions()
-                   .filter { $0.modo == modo }
-                   .shuffled()
-
-               perguntaAtual = perguntasRestantes.removeFirst()
-               acabouPerguntas = false
-        }
+            .filter { $0.modo == modo }
+            .shuffled()
+        
+        perguntaAtual = perguntasRestantes.removeFirst()
+        acabouPerguntas = false
+        indiceAtual = 0
+    }
     
     func resetarJogo() {
            resetarPerguntas()
@@ -101,14 +102,6 @@ class DilemasViewModel: ObservableObject {
         perguntasRestantes =  QuestionsManager.getAllQuestions()
             .filter { $0.modo == modo }
             .shuffled()
-
-        if let primeira = perguntasRestantes.first {
-            perguntaAtual = primeira
-            perguntasRestantes.removeFirst()
-            acabouPerguntas = false
-        } else {
-            perguntaAtual = nil
-            acabouPerguntas = true
-        }
+        resetarJogo()
     }
 }
