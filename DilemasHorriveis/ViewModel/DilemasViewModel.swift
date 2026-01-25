@@ -99,6 +99,7 @@ class DilemasViewModel: ObservableObject {
        }
     
     func atualizarModo(modo: ModoJogo) {
+        self.modo = modo
         perguntasRestantes =  QuestionsManager.getAllQuestions()
             .filter { $0.modo == modo }
             .shuffled()
