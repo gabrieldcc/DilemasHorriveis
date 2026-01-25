@@ -200,16 +200,6 @@ class PerguntasLeves {
             opcaoB: "Receber um spoiler gigantesco da sua série favorita",
             modo: .leve
         ),
-        
-        
-        
-        Pergunta(
-            titulo: "O que você prefere?",
-            opcaoA: "Usar fantasia ridícula em uma Comic Con lotada",
-            opcaoB: "Ir normal e perceber que TODO mundo está fantasiado",
-            modo: .leve
-        ),
-        
         Pergunta(
             titulo: "O que você prefere?",
             opcaoA: "Curar a cegueira do Demolidor",
@@ -223,16 +213,12 @@ class PerguntasLeves {
             opcaoB: "Nunca mais assistir seu filme favorito",
             modo: .leve
         ),
-  
-   
-
         Pergunta(
             titulo: "O que você prefere?",
             opcaoA: "Ficar sozinho para o resto da vida",
             opcaoB: "Estar sempre rodeado de gente insuportável",
             modo: .leve
         ),
-
         Pergunta(
             titulo: "O que você prefere?",
             opcaoA: "Encontrar o amor verdadeiro",
@@ -246,7 +232,6 @@ class PerguntasLeves {
             opcaoB: "Nunca conseguir usar teclado e mouse",
             modo: .leve
         ),
-
         Pergunta(
             titulo: "O que você prefere?",
             opcaoA: "Ser um pintor incrível",
@@ -294,11 +279,65 @@ class PerguntasLeves {
             opcaoB: "Falar sempre cantando",
             modo: .leve
         ),
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Ter sua vida televisionada 24h por dia para qualquer pessoa assistir",
+            opcaoB: "Ser completamente invisível para todas as pessoas",
+            modo: .leve
+        ),
 
-      
-        
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Nunca mais precisar limpar a casa",
+            opcaoB: "Nunca mais precisar cozinhar",
+            modo: .leve
+        ),
 
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Ficar duas vezes mais bonito(a)",
+            opcaoB: "Ficar duas vezes mais inteligente",
+            modo: .leve
+        ),
 
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Nunca mais poder beber álcool",
+            opcaoB: "Nunca mais poder usar redes sociais",
+            modo: .leve
+        ),
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Perder todos os seus cabelos",
+            opcaoB: "Perder todos os seus dentes",
+            modo: .leve
+        ),
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Ser obrigado a avisar em voz alta sempre que vai peidar",
+            opcaoB: "Fazer xixi na calça pelo menos uma vez todos os dias",
+            modo: .leve
+        ),
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Que seus pais escolham com quem você vai se casar",
+            opcaoB: "Que seus irmãos escolham com quem você vai se casar",
+            modo: .leve
+        ),
+
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Nunca conseguir dizer 'não' para ninguém",
+            opcaoB: "Dizer 'sim' mesmo quando não quer",
+            modo: .leve
+        ),
+
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Conseguir ler os pensamentos das pessoas",
+            opcaoB: "Conseguir conversar com animais",
+            modo: .leve
+        ),
 
 
 

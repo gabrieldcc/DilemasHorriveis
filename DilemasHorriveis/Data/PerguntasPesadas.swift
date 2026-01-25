@@ -152,7 +152,17 @@ class PerguntasPesadas {
             opcaoB: "Engolir os pelos de alguém que você não conhece",
             modo: .pesado
         ),
-        
-        
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Namorar com alguém que ri muito quando você tira as roupas",
+            opcaoB: "Namorar com alguém que chora muito na mesma situação?",
+            modo: .pesado
+        ),
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Delatar seu melhor amigo por um crime que ele cometeu",
+            opcaoB: "Ir para a cadeia por um crime cometido por um estranho",
+            modo: .pesado
+        )
     ]
 }
