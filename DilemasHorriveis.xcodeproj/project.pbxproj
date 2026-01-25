@@ -16,7 +16,7 @@
 		B6320DA92F22E04D004CA643 /* DilemasHorriveisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6320DA62F22E04D004CA643 /* DilemasHorriveisUITests.swift */; };
 		B6320DAA2F22E04D004CA643 /* DilemasHorriveisUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6320DA72F22E04D004CA643 /* DilemasHorriveisUITestsLaunchTests.swift */; };
 		B6320DAD2F22E05B004CA643 /* Pergunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6320DAC2F22E057004CA643 /* Pergunta.swift */; };
-		B6320DB32F22E149004CA643 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6320DB22F22E146004CA643 /* QuestionManager.swift */; };
+		B6320DB32F22E149004CA643 /* DilemasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6320DB22F22E146004CA643 /* DilemasViewModel.swift */; };
 		B6320DB52F22E4CB004CA643 /* OptionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6320DB42F22E4C8004CA643 /* OptionCard.swift */; };
 		B6320DB72F239828004CA643 /* ModoSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6320DB62F239820004CA643 /* ModoSelectionView.swift */; };
 		B6320DB92F239987004CA643 /* ModoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6320DB82F239982004CA643 /* ModoCard.swift */; };
@@ -56,7 +56,7 @@
 		B6320DA62F22E04D004CA643 /* DilemasHorriveisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilemasHorriveisUITests.swift; sourceTree = "<group>"; };
 		B6320DA72F22E04D004CA643 /* DilemasHorriveisUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilemasHorriveisUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B6320DAC2F22E057004CA643 /* Pergunta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pergunta.swift; sourceTree = "<group>"; };
-		B6320DB22F22E146004CA643 /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		B6320DB22F22E146004CA643 /* DilemasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilemasViewModel.swift; sourceTree = "<group>"; };
 		B6320DB42F22E4C8004CA643 /* OptionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCard.swift; sourceTree = "<group>"; };
 		B6320DB62F239820004CA643 /* ModoSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModoSelectionView.swift; sourceTree = "<group>"; };
 		B6320DB82F239982004CA643 /* ModoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModoCard.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 		B6C62A2A2F24540A00C10F29 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B6320DB22F22E146004CA643 /* QuestionManager.swift */,
+				B6320DB22F22E146004CA643 /* DilemasViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -361,7 +361,7 @@
 				B6C62A272F239E7C00C10F29 /* PerguntasNerd.swift in Sources */,
 				B6C62A252F239E7500C10F29 /* PerguntasPesadas.swift in Sources */,
 				B6320DAD2F22E05B004CA643 /* Pergunta.swift in Sources */,
-				B6320DB32F22E149004CA643 /* QuestionManager.swift in Sources */,
+				B6320DB32F22E149004CA643 /* DilemasViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

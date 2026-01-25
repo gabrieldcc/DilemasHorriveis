@@ -11,7 +11,7 @@ class DilemasViewModel: ObservableObject {
     @Published var acabouPerguntas = false
     @Published var erroSemPerguntas = false
     @Published var indiceAtual: Int = 0
-    private let modo: ModoJogo
+    private var modo: ModoJogo
     private var perguntasRestantes: [Pergunta] = []
     
     var totalPerguntas: Int {
