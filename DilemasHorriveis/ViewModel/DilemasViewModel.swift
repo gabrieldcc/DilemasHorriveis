@@ -32,7 +32,6 @@ class DilemasViewModel: ObservableObject {
     init(modo: ModoJogo) {
         self.modo = modo
         
-        // Seleciona as perguntas pelo modo
         switch modo {
         case .leve:
             self.perguntasRestantes = PerguntasLeves.perguntas.shuffled()
@@ -44,12 +43,9 @@ class DilemasViewModel: ObservableObject {
             self.perguntasRestantes = PerguntasCulturaBR.perguntas.shuffled()
         }
         
-        // Inicializa a primeira pergunta de forma segura
         if let primeira = perguntasRestantes.first {
             self.perguntaAtual = primeira
-            perguntasRestantes.removeFirst()
         } else {
-            // Caso não haja perguntas, cria uma pergunta genérica
             self.perguntaAtual = Pergunta(
                 titulo: "Ops! Não há perguntas para este modo ainda.",
                 opcaoA: "Voltar",
@@ -96,14 +92,12 @@ class DilemasViewModel: ObservableObject {
             .filter { $0.modo == modo }
             .shuffled()
         
-        perguntaAtual = perguntasRestantes.removeFirst()
         acabouPerguntas = false
         indiceAtual = 0
     }
     
     func resetarJogo() {
         resetarPerguntas()
-        perguntaAtual = perguntasRestantes.removeFirst()
         acabouPerguntas = false
     }
     
