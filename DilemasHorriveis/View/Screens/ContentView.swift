@@ -45,13 +45,20 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
                     
-                    HStack(spacing: 16) {
-                        OptionCard(label: "A", text: pergunta.opcaoA, isPesado: modoPesado, onTap: {
-                            manager.tocarOpcao(.A)
-                        })
-                        OptionCard(label: "B", text: pergunta.opcaoB, isPesado: modoPesado, onTap: {
-                            manager.tocarOpcao(.B)
-                        })
+                    if manager.estado != .revelando {
+                        HStack(spacing: 16) {
+                            OptionCard(label: "A", text: pergunta.opcaoA, estado: manager.estado, onTap: {
+                                manager.tocarOpcao(.A)
+                            })
+                            OptionCard(label: "B", text: pergunta.opcaoB, estado: manager.estado, onTap: {
+                                manager.tocarOpcao(.B)
+                            })
+                        }
+                    } else {
+                        HStack(spacing: 16) {
+                            MostradorVotosCard(label: "A", votes: manager.votosA, estado: manager.estado)
+                            MostradorVotosCard(label: "B", votes: manager.votosB, estado: manager.estado)
+                        }
                     }
                     
                     if manager.estado == .votando {
@@ -99,15 +106,17 @@ struct ContentView: View {
                 }
             }
             .padding()
-            
-            if manager.mostrarAlertaVotacao {
-                VotacaoTutorialOverlay {
-                    manager.fecharTutorial()
-                }
-                .zIndex(10)
-            }
+           
+            //ATIVAR QUANDO QUISER MOSTRAR O ALERTA
+//            if manager.mostrarAlertaVotacao {
+//                VotacaoTutorialOverlay {
+//                    manager.fecharTutorial()
+//                }
+//                .zIndex(10)
+//            }
             
         }
+        .animation(.easeInOut(duration: 0.35), value: manager.estado)
         .alert("Acabaram as perguntas 😅",
                isPresented: $manager.acabouPerguntas) {
             Button("Recomeçar") {

@@ -19,7 +19,6 @@ class DilemasViewModel: ObservableObject {
     private var modo: ModoJogo
     private var perguntasRestantes: [Pergunta] = []
     private var votoPendente: Opcao?
-
     
     var totalPerguntas: Int {
         perguntasRestantes.count

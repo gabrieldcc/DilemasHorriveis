@@ -28,6 +28,7 @@
 		B6C62A692F28DDCA00C10F29 /* EstadoJogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A682F28DDC500C10F29 /* EstadoJogo.swift */; };
 		B6C62A6B2F28DE4900C10F29 /* VotacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A6A2F28DE4400C10F29 /* VotacaoView.swift */; };
 		B6C62A6D2F28F32300C10F29 /* VotacaoTutorialOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A6C2F28F31D00C10F29 /* VotacaoTutorialOverlay.swift */; };
+		B6C62A6F2F28FA9100C10F29 /* MostradorVotosCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A6E2F28FA8900C10F29 /* MostradorVotosCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		B6C62A682F28DDC500C10F29 /* EstadoJogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadoJogo.swift; sourceTree = "<group>"; };
 		B6C62A6A2F28DE4400C10F29 /* VotacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotacaoView.swift; sourceTree = "<group>"; };
 		B6C62A6C2F28F31D00C10F29 /* VotacaoTutorialOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotacaoTutorialOverlay.swift; sourceTree = "<group>"; };
+		B6C62A6E2F28FA8900C10F29 /* MostradorVotosCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostradorVotosCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 		B6C62A2C2F24554F00C10F29 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B6C62A6E2F28FA8900C10F29 /* MostradorVotosCard.swift */,
 				B6C62A6A2F28DE4400C10F29 /* VotacaoView.swift */,
 				B6320DB82F239982004CA643 /* ModoCard.swift */,
 				B6320DB42F22E4C8004CA643 /* OptionCard.swift */,
@@ -364,6 +367,7 @@
 				B6320D9F2F22E047004CA643 /* ContentView.swift in Sources */,
 				B6C62A232F239E4600C10F29 /* QuestionsManager.swift in Sources */,
 				B6320DA02F22E047004CA643 /* DilemasHorriveisApp.swift in Sources */,
+				B6C62A6F2F28FA9100C10F29 /* MostradorVotosCard.swift in Sources */,
 				B6C62A292F2451AA00C10F29 /* DilemaColors.swift in Sources */,
 				B6C62A6B2F28DE4900C10F29 /* VotacaoView.swift in Sources */,
 				B6320DB72F239828004CA643 /* ModoSelectionView.swift in Sources */,
