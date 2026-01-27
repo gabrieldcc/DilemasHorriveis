@@ -81,7 +81,7 @@ class DilemasViewModel: ObservableObject {
                 acabouPerguntas = true
             }
             
-            guard indiceAtual - 1 > perguntasRestantes.count else {
+            guard indiceAtual - 1 >= 0 else {
                 perguntaAtual = nil
                 return
             }
