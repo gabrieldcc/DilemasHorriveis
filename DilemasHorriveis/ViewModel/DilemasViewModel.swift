@@ -27,8 +27,8 @@ class DilemasViewModel: ObservableObject {
         return Double(indiceAtual + 1) / Double(totalPerguntas)
     }
     
-
-
+    
+    
     init(modo: ModoJogo) {
         self.modo = modo
         
@@ -58,32 +58,37 @@ class DilemasViewModel: ObservableObject {
             )
         }
     }
-
+    
     func proximaPergunta() {
         withAnimation(.spring()) {
-            perguntaAtual =  QuestionsManager.getAllQuestions().randomElement()!
-            switch modo {
-            case .leve:
-                perguntaAtual = PerguntasLeves.perguntas.randomElement()
-            case .pesado:
-                perguntaAtual = PerguntasPesadas.perguntas.randomElement()
-            case .nerd:
-                perguntaAtual = PerguntasNerd.perguntas.randomElement()
-            case .culturaBR:
-                perguntaAtual = PerguntasCulturaBR.perguntas.randomElement()
+            if perguntasRestantes.isEmpty {
+                acabouPerguntas = true
             }
+            
+            guard indiceAtual + 1 < perguntasRestantes.count else {
+                perguntaAtual = nil
+                return
+            }
+            
+            indiceAtual += 1
+            perguntaAtual = perguntasRestantes[indiceAtual]
         }
-        if perguntasRestantes.isEmpty {
-            acabouPerguntas = true
+    }
+    
+    func perguntaAnterior() {
+        withAnimation(.spring()) {
+            if perguntasRestantes.isEmpty {
+                acabouPerguntas = true
+            }
+            
+            guard indiceAtual - 1 > perguntasRestantes.count else {
+                perguntaAtual = nil
+                return
+            }
+            
+            indiceAtual -= 1
+            perguntaAtual = perguntasRestantes[indiceAtual]
         }
-        
-        guard indiceAtual + 1 < perguntasRestantes.count else {
-            perguntaAtual = nil
-            return
-        }
-        
-        indiceAtual += 1
-        perguntaAtual = perguntasRestantes[indiceAtual]
     }
     
     private func resetarPerguntas() {
@@ -97,10 +102,10 @@ class DilemasViewModel: ObservableObject {
     }
     
     func resetarJogo() {
-           resetarPerguntas()
-           perguntaAtual = perguntasRestantes.removeFirst()
-           acabouPerguntas = false
-       }
+        resetarPerguntas()
+        perguntaAtual = perguntasRestantes.removeFirst()
+        acabouPerguntas = false
+    }
     
     func atualizarModo(modo: ModoJogo) {
         self.modo = modo
