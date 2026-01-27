@@ -163,6 +163,40 @@ class PerguntasPesadas {
             opcaoA: "Delatar seu melhor amigo por um crime que ele cometeu",
             opcaoB: "Ir para a cadeia por um crime cometido por um estranho",
             modo: .pesado
-        )
+        ),
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Se relacionar com alguém que chega ao clímax em poucos segundos",
+            opcaoB: "Se relacionar com alguém que demora horas para chegar ao clímax",
+            modo: .pesado
+        ),
+
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Receber uma notificação toda vez que seus pais estão tendo relações",
+            opcaoB: "Que todas as pessoas do seu trabalho recebam uma notificação quando você está tendo relações",
+            modo: .pesado
+        ),
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Só poder ter relações no escuro",
+            opcaoB: "Só poder ter relações em locais públicos",
+            modo: .pesado
+        ),
+
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Poder ter relações apenas no carro pelo resto da vida",
+            opcaoB: "Poder ter relações apenas no chuveiro pelo resto da vida",
+            modo: .pesado
+        ),
+
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Ser preso por 3 anos por algo que você não fez",
+            opcaoB: "Viver o resto da vida convivendo com a culpa de algo terrível que fez",
+            modo: .pesado
+        ),
+
     ]
 }

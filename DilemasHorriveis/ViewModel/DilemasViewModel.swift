@@ -40,6 +40,8 @@ class DilemasViewModel: ObservableObject {
             self.perguntasRestantes = PerguntasPesadas.perguntas.shuffled()
         case .nerd:
             self.perguntasRestantes = PerguntasNerd.perguntas.shuffled()
+        case .culturaBR:
+            self.perguntasRestantes = PerguntasCulturaBR.perguntas.shuffled()
         }
         
         // Inicializa a primeira pergunta de forma segura
@@ -67,6 +69,8 @@ class DilemasViewModel: ObservableObject {
                 perguntaAtual = PerguntasPesadas.perguntas.randomElement()
             case .nerd:
                 perguntaAtual = PerguntasNerd.perguntas.randomElement()
+            case .culturaBR:
+                perguntaAtual = PerguntasCulturaBR.perguntas.randomElement()
             }
         }
         if perguntasRestantes.isEmpty {

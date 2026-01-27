@@ -338,6 +338,19 @@ class PerguntasLeves {
             opcaoB: "Conseguir conversar com animais",
             modo: .leve
         ),
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Ter 20 filhos ao longo da vida",
+            opcaoB: "Nunca poder ter ou adotar filhos",
+            modo: .leve
+        ),
+
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Saber a data exata da sua morte",
+            opcaoB: "Saber a causa da sua morte, mas não quando",
+            modo: .leve
+        ),
 
 
 

@@ -16,7 +16,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            modoAtual.color
+            modoAtual.color()
                 .ignoresSafeArea()
 
             VStack(spacing: 32) {
@@ -54,7 +54,7 @@ struct ContentView: View {
                     }
                     
                     // Toggle de pesado / leve
-                    if modoAtual != .nerd {
+                    if modoAtual == .pesado || modoAtual == .leve {
                         Toggle(isOn: $modoPesado) {
                             Text("Modo pesado")
                                 .foregroundColor(.white)

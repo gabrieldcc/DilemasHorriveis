@@ -12,7 +12,7 @@ struct ModoCard: View {
 
     var body: some View {
         ZStack {
-            modo.color
+//            modo.color
 
             HStack {
                 Text(modo.emoji)
@@ -31,7 +31,7 @@ struct ModoCard: View {
         .cornerRadius(20)
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                .stroke(modo.color(isBorder: true), lineWidth: 1)
         )
     }
 }

@@ -11,6 +11,7 @@ enum ModoJogo: String, CaseIterable, Identifiable {
     case leve
     case pesado
     case nerd
+    case culturaBR
 
     var id: String { rawValue }
 
@@ -19,6 +20,7 @@ enum ModoJogo: String, CaseIterable, Identifiable {
         case .leve: return "Leve"
         case .pesado: return "Pesado"
         case .nerd: return "Nerd"
+        case .culturaBR: return "Cultura BR"
         }
     }
 
@@ -27,19 +29,23 @@ enum ModoJogo: String, CaseIterable, Identifiable {
         case .leve: return "🙂"
         case .pesado: return "🔥"
         case .nerd: return "🤓"
+        case .culturaBR: return "🇧🇷"
         }
     }
 
-    var color: Color {
+    func color(isBorder: Bool = false) -> Color {
         switch self {
         case .leve:
             return DilemaColors.orangePrimary.opacity(0.8)
 
         case .pesado:
-            return DilemaColors.blackBase
+            return isBorder ? DilemaColors.redSoft : DilemaColors.blackBase
 
         case .nerd:
             return DilemaColors.orangeSoft
+            
+        case .culturaBR:
+            return DilemaColors.greenBrasil
         }
     }
 }

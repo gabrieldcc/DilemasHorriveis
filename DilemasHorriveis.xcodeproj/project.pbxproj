@@ -24,6 +24,7 @@
 		B6C62A252F239E7500C10F29 /* PerguntasPesadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A242F239E7100C10F29 /* PerguntasPesadas.swift */; };
 		B6C62A272F239E7C00C10F29 /* PerguntasNerd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A262F239E7800C10F29 /* PerguntasNerd.swift */; };
 		B6C62A292F2451AA00C10F29 /* DilemaColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A282F2451A300C10F29 /* DilemaColors.swift */; };
+		B6C62A672F26E64E00C10F29 /* PerguntasCulturaBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A662F26E64700C10F29 /* PerguntasCulturaBR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		B6C62A242F239E7100C10F29 /* PerguntasPesadas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntasPesadas.swift; sourceTree = "<group>"; };
 		B6C62A262F239E7800C10F29 /* PerguntasNerd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntasNerd.swift; sourceTree = "<group>"; };
 		B6C62A282F2451A300C10F29 /* DilemaColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilemaColors.swift; sourceTree = "<group>"; };
+		B6C62A662F26E64700C10F29 /* PerguntasCulturaBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntasCulturaBR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,9 +172,10 @@
 		B6320DB02F22E09D004CA643 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B6C62A662F26E64700C10F29 /* PerguntasCulturaBR.swift */,
+				B6C62A222F239E3F00C10F29 /* QuestionsManager.swift */,
 				B6C62A262F239E7800C10F29 /* PerguntasNerd.swift */,
 				B6C62A242F239E7100C10F29 /* PerguntasPesadas.swift */,
-				B6C62A222F239E3F00C10F29 /* QuestionsManager.swift */,
 				B6320D9C2F22E047004CA643 /* PerguntasLeves.swift */,
 			);
 			path = Data;
@@ -361,6 +364,7 @@
 				B6C62A272F239E7C00C10F29 /* PerguntasNerd.swift in Sources */,
 				B6C62A252F239E7500C10F29 /* PerguntasPesadas.swift in Sources */,
 				B6320DAD2F22E05B004CA643 /* Pergunta.swift in Sources */,
+				B6C62A672F26E64E00C10F29 /* PerguntasCulturaBR.swift in Sources */,
 				B6320DB32F22E149004CA643 /* DilemasViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
