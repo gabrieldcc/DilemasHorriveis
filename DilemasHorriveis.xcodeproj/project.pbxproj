@@ -25,6 +25,9 @@
 		B6C62A272F239E7C00C10F29 /* PerguntasNerd.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A262F239E7800C10F29 /* PerguntasNerd.swift */; };
 		B6C62A292F2451AA00C10F29 /* DilemaColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A282F2451A300C10F29 /* DilemaColors.swift */; };
 		B6C62A672F26E64E00C10F29 /* PerguntasCulturaBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A662F26E64700C10F29 /* PerguntasCulturaBR.swift */; };
+		B6C62A692F28DDCA00C10F29 /* EstadoJogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A682F28DDC500C10F29 /* EstadoJogo.swift */; };
+		B6C62A6B2F28DE4900C10F29 /* VotacaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A6A2F28DE4400C10F29 /* VotacaoView.swift */; };
+		B6C62A6D2F28F32300C10F29 /* VotacaoTutorialOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C62A6C2F28F31D00C10F29 /* VotacaoTutorialOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		B6C62A262F239E7800C10F29 /* PerguntasNerd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntasNerd.swift; sourceTree = "<group>"; };
 		B6C62A282F2451A300C10F29 /* DilemaColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DilemaColors.swift; sourceTree = "<group>"; };
 		B6C62A662F26E64700C10F29 /* PerguntasCulturaBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerguntasCulturaBR.swift; sourceTree = "<group>"; };
+		B6C62A682F28DDC500C10F29 /* EstadoJogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadoJogo.swift; sourceTree = "<group>"; };
+		B6C62A6A2F28DE4400C10F29 /* VotacaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotacaoView.swift; sourceTree = "<group>"; };
+		B6C62A6C2F28F31D00C10F29 /* VotacaoTutorialOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotacaoTutorialOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 		B6320DAF2F22E081004CA643 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				B6C62A682F28DDC500C10F29 /* EstadoJogo.swift */,
 				B6320D9B2F22E047004CA643 /* ModoJogo.swift */,
 			);
 			path = Enum;
@@ -201,6 +208,7 @@
 		B6C62A2B2F24553D00C10F29 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B6C62A6C2F28F31D00C10F29 /* VotacaoTutorialOverlay.swift */,
 				B6320DB62F239820004CA643 /* ModoSelectionView.swift */,
 				B6320D992F22E047004CA643 /* ContentView.swift */,
 			);
@@ -210,6 +218,7 @@
 		B6C62A2C2F24554F00C10F29 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B6C62A6A2F28DE4400C10F29 /* VotacaoView.swift */,
 				B6320DB82F239982004CA643 /* ModoCard.swift */,
 				B6320DB42F22E4C8004CA643 /* OptionCard.swift */,
 			);
@@ -356,11 +365,14 @@
 				B6C62A232F239E4600C10F29 /* QuestionsManager.swift in Sources */,
 				B6320DA02F22E047004CA643 /* DilemasHorriveisApp.swift in Sources */,
 				B6C62A292F2451AA00C10F29 /* DilemaColors.swift in Sources */,
+				B6C62A6B2F28DE4900C10F29 /* VotacaoView.swift in Sources */,
 				B6320DB72F239828004CA643 /* ModoSelectionView.swift in Sources */,
 				B6320DA12F22E047004CA643 /* ModoJogo.swift in Sources */,
 				B6320DB52F22E4CB004CA643 /* OptionCard.swift in Sources */,
 				B6320DB92F239987004CA643 /* ModoCard.swift in Sources */,
+				B6C62A692F28DDCA00C10F29 /* EstadoJogo.swift in Sources */,
 				B6320DA22F22E047004CA643 /* PerguntasLeves.swift in Sources */,
+				B6C62A6D2F28F32300C10F29 /* VotacaoTutorialOverlay.swift in Sources */,
 				B6C62A272F239E7C00C10F29 /* PerguntasNerd.swift in Sources */,
 				B6C62A252F239E7500C10F29 /* PerguntasPesadas.swift in Sources */,
 				B6320DAD2F22E05B004CA643 /* Pergunta.swift in Sources */,

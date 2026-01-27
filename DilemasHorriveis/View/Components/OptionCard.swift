@@ -10,6 +10,7 @@ struct OptionCard: View {
     let label: String
     let text: String
     let isPesado: Bool
+    let onTap: () -> Void
 
     var body: some View {
         VStack(spacing: 12) {
@@ -22,6 +23,9 @@ struct OptionCard: View {
                 .font(.headline)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
+        }
+        .onTapGesture {
+            onTap()
         }
         .padding()
         .frame(maxWidth: .infinity, minHeight: 140)

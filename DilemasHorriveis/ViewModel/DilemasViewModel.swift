@@ -11,8 +11,15 @@ class DilemasViewModel: ObservableObject {
     @Published var acabouPerguntas = false
     @Published var erroSemPerguntas = false
     @Published var indiceAtual: Int = 0
+    @Published var estado: EstadoJogo = .pergunta
+    @Published var votosA: Int = 0
+    @Published var votosB: Int = 0
+    @Published var mostrarAlertaVotacao = false
+    @Published var alertaJaMostrado = false
     private var modo: ModoJogo
     private var perguntasRestantes: [Pergunta] = []
+    private var votoPendente: Opcao?
+
     
     var totalPerguntas: Int {
         perguntasRestantes.count
@@ -27,7 +34,12 @@ class DilemasViewModel: ObservableObject {
         return Double(indiceAtual + 1) / Double(totalPerguntas)
     }
     
-    
+    var maisVotado: Opcao? {
+        guard estado == .revelando else { return nil }
+
+        if votosA == votosB { return nil }
+        return votosA > votosB ? .A : .B
+    }
     
     init(modo: ModoJogo) {
         self.modo = modo
@@ -55,7 +67,48 @@ class DilemasViewModel: ObservableObject {
         }
     }
     
+    func tocarOpcao(_ opcao: Opcao) {
+        if !alertaJaMostrado {
+            mostrarAlertaVotacao = true
+            alertaJaMostrado = true
+            votoPendente = opcao
+            return
+        }
+
+        registrarVoto(opcao)
+    }
+    
+    func fecharTutorial() {
+        mostrarAlertaVotacao = false
+
+        if let opcao = votoPendente {
+            registrarVoto(opcao)
+            votoPendente = nil
+        }
+    }
+
+    func registrarVoto(_ opcao: Opcao) {
+        estado = .votando
+
+        switch opcao {
+        case .A: votosA += 1
+        case .B: votosB += 1
+        }
+    }
+    
+    func confirmarAlerta() {
+        if let opcao = votoPendente {
+            registrarVoto(opcao)
+            votoPendente = nil
+        }
+    }
+
+    func revelarVotos() {
+        estado = .revelando
+    }
+    
     func proximaPergunta() {
+        resetarEstadoJogo()
         withAnimation(.spring()) {
             if perguntasRestantes.isEmpty {
                 acabouPerguntas = true
@@ -71,7 +124,14 @@ class DilemasViewModel: ObservableObject {
         }
     }
     
+    private func resetarEstadoJogo() {
+        estado = .pergunta
+        votosA = 0
+        votosB = 0
+    }
+    
     func perguntaAnterior() {
+        resetarEstadoJogo()
         withAnimation(.spring()) {
             if perguntasRestantes.isEmpty {
                 acabouPerguntas = true

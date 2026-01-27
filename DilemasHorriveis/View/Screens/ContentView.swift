@@ -4,7 +4,7 @@ struct ContentView: View {
     @StateObject private var manager: DilemasViewModel
     @State private var modoPesado = false
     @State var modoAtual: ModoJogo
-
+    
     
     init(modo: ModoJogo) {
         self.modoAtual = modo
@@ -13,64 +13,55 @@ struct ContentView: View {
             self._modoPesado = State(initialValue: true)
         }
     }
-
+    
     var body: some View {
         ZStack {
             modoAtual.color()
                 .ignoresSafeArea()
-
+            
             VStack(spacing: 32) {
                 
                 VStack(spacing: 12) {
-
-                    // Texto
+                    
                     Text("Pergunta \(manager.progressoTexto)")
                         .font(.caption)
                         .foregroundColor(.white.opacity(0.8))
-
-                    // Barra
+                    
                     ProgressView(value: manager.progressoPercentual)
                         .progressViewStyle(LinearProgressViewStyle(tint: .white))
                         .animation(.easeInOut, value: manager.progressoPercentual)
                 }
                 .padding(.horizontal)
-
+                
                 Spacer()
-
-
+                
                 Text(modoAtual.emoji)
                     .font(.largeTitle)
-
+                
                 if let pergunta = manager.perguntaAtual {
                     Text(pergunta.titulo)
                         .font(.system(size: 34, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
-
+                    
                     HStack(spacing: 16) {
-                        OptionCard(label: "A", text: pergunta.opcaoA, isPesado: modoPesado)
-                        OptionCard(label: "B", text: pergunta.opcaoB, isPesado: modoPesado)
+                        OptionCard(label: "A", text: pergunta.opcaoA, isPesado: modoPesado, onTap: {
+                            manager.tocarOpcao(.A)
+                        })
+                        OptionCard(label: "B", text: pergunta.opcaoB, isPesado: modoPesado, onTap: {
+                            manager.tocarOpcao(.B)
+                        })
                     }
                     
-                    // Toggle de pesado / leve
-                    if modoAtual == .pesado || modoAtual == .leve {
-                        Toggle(isOn: $modoPesado) {
-                            Text("Modo pesado")
-                                .foregroundColor(.white)
-                                .font(.headline)
-                        }
-                        .toggleStyle(SwitchToggleStyle(tint: .red))
-                        .padding(.horizontal)
-                        .onChange(of: modoPesado) {
-                            let novoModo: ModoJogo = modoPesado ? .pesado : .leve
-                            modoAtual = novoModo
-                            manager.atualizarModo(modo: novoModo)
+                    if manager.estado == .votando {
+                        VotacaoView(votosA: manager.votosA, votosB: manager.votosB, estado: manager.estado) {
+                            manager.revelarVotos()
                         }
                     }
-
+                    
                     Spacer()
-
+                    
                     HStack {
                         Button {
                             manager.perguntaAnterior()
@@ -108,6 +99,14 @@ struct ContentView: View {
                 }
             }
             .padding()
+            
+            if manager.mostrarAlertaVotacao {
+                VotacaoTutorialOverlay {
+                    manager.fecharTutorial()
+                }
+                .zIndex(10)
+            }
+            
         }
         .alert("Acabaram as perguntas 😅",
                isPresented: $manager.acabouPerguntas) {
@@ -115,6 +114,7 @@ struct ContentView: View {
                 manager.resetarJogo()
             }
         }
+        
     }
 }
 
