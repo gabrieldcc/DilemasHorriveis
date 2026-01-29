@@ -121,13 +121,23 @@ struct ContentView: View {
             }
             .padding()
             
-            if manager.mostrarTutorial && !manager.tutorialVisto {
+            if manager.mostrarTutorial && !manager.tutorialVisto || manager.mostrarTutorialIcon {
                 VotacaoTutorialOverlay {
                     manager.fecharTutorial()
                 }
                 .toolbar(.hidden)
                 .transition(.opacity)
                 .zIndex(999)
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    manager.mostrarTutorialIcon = true
+                } label: {
+                    Image(systemName: "info.circle")
+                        .foregroundColor(.white)
+                }
             }
         }
         .onAppear {

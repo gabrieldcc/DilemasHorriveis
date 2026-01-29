@@ -18,6 +18,7 @@ class DilemasViewModel: ObservableObject {
     @Published var mostrarAlertaVotacao = false
     @Published var alertaJaMostrado = false
     @Published var mostrarTutorial = true
+    @Published var mostrarTutorialIcon = false
     private var modo: ModoJogo
     private var perguntasRestantes: [Pergunta] = []
     private var votoPendente: Opcao?
@@ -100,6 +101,8 @@ class DilemasViewModel: ObservableObject {
     }
     
     func fecharTutorial() {
+        mostrarAlertaVotacao = false
+        mostrarTutorialIcon = false
         mostrarTutorial = false
         tutorialVisto = true
     }
