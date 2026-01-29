@@ -70,13 +70,6 @@ class DilemasViewModel: ObservableObject {
     }
     
     func tocarOpcao(_ opcao: Opcao) {
-        if !alertaJaMostrado {
-            mostrarAlertaVotacao = true
-            alertaJaMostrado = true
-            votoPendente = opcao
-            return
-        }
-
         registrarVoto(opcao)
     }
 

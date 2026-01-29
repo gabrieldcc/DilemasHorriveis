@@ -33,7 +33,12 @@ enum ModoJogo: String, CaseIterable, Identifiable {
         }
     }
 
-    func color(isBorder: Bool = false) -> Color {
+    func color(isBorder: Bool = false, estado: EstadoJogo? = nil) -> Color {
+        
+        if estado == .votando || estado == .revelando {
+            return DilemaColors.bluePurple.opacity(0.8)
+        }
+        
         switch self {
         case .leve:
             return DilemaColors.orangePrimary.opacity(0.8)

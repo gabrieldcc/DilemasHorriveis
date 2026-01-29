@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            modoAtual.color()
+            modoAtual.color(estado: manager.estado)
                 .ignoresSafeArea()
             
             VStack(spacing: 32) {
@@ -36,11 +36,15 @@ struct ContentView: View {
                 Spacer()
                 
                 if manager.estado == .votando {
-                    Text("Total votos")
+                    Text("TOTAL VOTOS")
                         .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
                     
                     Text("\(manager.votosA + manager.votosB)")
-                        .font(.caption2)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
                 } else {
                     Text(modoAtual.emoji)
                         .font(.largeTitle)

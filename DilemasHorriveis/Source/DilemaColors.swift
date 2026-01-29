@@ -15,5 +15,5 @@ struct DilemaColors {
     static let whiteSoft = Color(red: 245/255, green: 245/255, blue: 247/255)
     static let greenBrasil = Color(red: 0/255, green: 121/255, blue: 64/255)
     static let yellowBrasil = Color(red: 247/255, green: 196/255, blue: 49/255)
-
+    static let bluePurple = Color(red: 78/255, green: 76/255, blue: 158/255)
 }
