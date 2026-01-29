@@ -35,8 +35,16 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Text(modoAtual.emoji)
-                    .font(.largeTitle)
+                if manager.estado == .votando {
+                    Text("Total votos")
+                        .font(.largeTitle)
+                    
+                    Text("\(manager.votosA + manager.votosB)")
+                        .font(.caption2)
+                } else {
+                    Text(modoAtual.emoji)
+                        .font(.largeTitle)
+                }
                 
                 if let pergunta = manager.perguntaAtual {
                     Text(pergunta.titulo)
@@ -56,8 +64,12 @@ struct ContentView: View {
                         }
                     } else {
                         HStack(spacing: 16) {
-                            MostradorVotosCard(label: "A", votes: manager.votosA, estado: manager.estado)
-                            MostradorVotosCard(label: "B", votes: manager.votosB, estado: manager.estado)
+                            MostradorVotosCard(label: "A", votes: manager.votosA, estado: manager.estado, onTap: {
+                                manager.estado = .votando
+                            })
+                            MostradorVotosCard(label: "B", votes: manager.votosB, estado: manager.estado, onTap: {
+                                manager.estado = .votando
+                            })
                         }
                     }
                     
@@ -104,19 +116,23 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                     Spacer()
                 }
+                
+                
             }
             .padding()
-           
-            //ATIVAR QUANDO QUISER MOSTRAR O ALERTA
-//            if manager.mostrarAlertaVotacao {
-//                VotacaoTutorialOverlay {
-//                    manager.fecharTutorial()
-//                }
-//                .zIndex(10)
-//            }
             
+            if manager.mostrarTutorial && !manager.tutorialVisto {
+                VotacaoTutorialOverlay {
+                    manager.fecharTutorial()
+                }
+                .toolbar(.hidden)
+                .transition(.opacity)
+                .zIndex(999)
+            }
         }
-        .animation(.easeInOut(duration: 0.35), value: manager.estado)
+        .onAppear {
+            manager.mostrarTutorial = true
+        }
         .alert("Acabaram as perguntas 😅",
                isPresented: $manager.acabouPerguntas) {
             Button("Recomeçar") {

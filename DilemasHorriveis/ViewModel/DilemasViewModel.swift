@@ -7,6 +7,7 @@
 import SwiftUI
 
 class DilemasViewModel: ObservableObject {
+    @AppStorage("tutorialVisto") var tutorialVisto = false
     @Published var perguntaAtual: Pergunta?
     @Published var acabouPerguntas = false
     @Published var erroSemPerguntas = false
@@ -16,6 +17,7 @@ class DilemasViewModel: ObservableObject {
     @Published var votosB: Int = 0
     @Published var mostrarAlertaVotacao = false
     @Published var alertaJaMostrado = false
+    @Published var mostrarTutorial = true
     private var modo: ModoJogo
     private var perguntasRestantes: [Pergunta] = []
     private var votoPendente: Opcao?
@@ -76,15 +78,6 @@ class DilemasViewModel: ObservableObject {
 
         registrarVoto(opcao)
     }
-    
-    func fecharTutorial() {
-        mostrarAlertaVotacao = false
-
-        if let opcao = votoPendente {
-            registrarVoto(opcao)
-            votoPendente = nil
-        }
-    }
 
     func registrarVoto(_ opcao: Opcao) {
         estado = .votando
@@ -104,6 +97,11 @@ class DilemasViewModel: ObservableObject {
 
     func revelarVotos() {
         estado = .revelando
+    }
+    
+    func fecharTutorial() {
+        mostrarTutorial = false
+        tutorialVisto = true
     }
     
     func proximaPergunta() {

@@ -4,6 +4,8 @@
 //
 //  Created by Gabriel Castro on 22/01/26.
 //
+
+import UIKit
 import SwiftUI
 
 struct OptionCard: View {
@@ -24,8 +26,10 @@ struct OptionCard: View {
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             onTap()
+            hapticImpact(.medium)
         }
         .padding()
         .frame(maxWidth: .infinity, minHeight: 140)
@@ -37,6 +41,12 @@ struct OptionCard: View {
         )
 
         .animation(.easeInOut, value: estado)
+    }
+    
+    func hapticImpact(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        let generator = UIImpactFeedbackGenerator(style: style)
+        generator.prepare()
+        generator.impactOccurred()
     }
 }
 
