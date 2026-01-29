@@ -13,6 +13,7 @@ struct OptionCard: View {
     let text: String
     let estado: EstadoJogo
     let onTap: () -> Void
+    @State private var isPressed = false
 
     var body: some View {
         VStack(spacing: 12) {
@@ -29,7 +30,7 @@ struct OptionCard: View {
         .contentShape(Rectangle())
         .onTapGesture {
             onTap()
-            hapticImpact(.medium)
+            feedback()
         }
         .padding()
         .frame(maxWidth: .infinity, minHeight: 140)
@@ -37,7 +38,7 @@ struct OptionCard: View {
         .clipShape(RoundedRectangle(cornerRadius: 24))
         .overlay(
             RoundedRectangle(cornerRadius: 24)
-                .stroke(Color.white.opacity(0.1))
+                .stroke(isPressed ? Color.green : Color.white.opacity(0.1), lineWidth: 3)
         )
 
         .animation(.easeInOut, value: estado)
@@ -48,6 +49,14 @@ struct OptionCard: View {
         generator.prepare()
         generator.impactOccurred()
     }
+    
+    private func feedback() {
+        isPressed = true
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            isPressed = false
+        }
+      }
 }
 
 #Preview {
