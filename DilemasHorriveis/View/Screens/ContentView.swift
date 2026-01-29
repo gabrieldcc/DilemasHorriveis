@@ -81,11 +81,11 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    HStack {
+                    if manager.estado == .votando {
                         Button {
-                            manager.perguntaAnterior()
+                            manager.revelarVotos()
                         } label: {
-                            Text("VOLTAR")
+                            Text("Revelar Votos")
                                 .font(.headline)
                                 .foregroundColor(.black)
                                 .frame(maxWidth: .infinity)
@@ -94,18 +94,34 @@ struct ContentView: View {
                                 .cornerRadius(16)
                                 .padding(.horizontal)
                         }
+                    } else {
                         
-                        Button {
-                            manager.proximaPergunta()
-                        } label: {
-                            Text("PRÓXIMA")
-                                .font(.headline)
-                                .foregroundColor(.black)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.white)
-                                .cornerRadius(16)
-                                .padding(.horizontal)
+                        HStack {
+                            Button {
+                                manager.perguntaAnterior()
+                            } label: {
+                                Text("VOLTAR")
+                                    .font(.headline)
+                                    .foregroundColor(.black)
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.white)
+                                    .cornerRadius(16)
+                                    .padding(.horizontal)
+                            }
+                            
+                            Button {
+                                manager.proximaPergunta()
+                            } label: {
+                                Text("PRÓXIMA")
+                                    .font(.headline)
+                                    .foregroundColor(.black)
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.white)
+                                    .cornerRadius(16)
+                                    .padding(.horizontal)
+                            }
                         }
                     }
                     

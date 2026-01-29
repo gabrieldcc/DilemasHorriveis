@@ -22,19 +22,8 @@ struct VotacaoView: View {
                     Text("B: \(votosB)")
                 }
                 .font(.headline)
-            } else {
-                Text("Votos registrados \(votosA + votosB)")
-                    .font(.subheadline)
-                    .opacity(0.7)
             }
-
-            Button("Revelar votos") {
-                onRevelar()
-            }
-            .buttonStyle(.borderedProminent)
         }
         .padding()
-        .background(.ultraThinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 }
