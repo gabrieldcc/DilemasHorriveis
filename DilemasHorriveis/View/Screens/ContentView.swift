@@ -115,9 +115,20 @@ struct ContentView: View {
                         .font(.title2)
                         .multilineTextAlignment(.center)
                     Spacer()
+                    Button {
+                        manager.resetarJogo()
+                    } label: {
+                        Text("Recomeçar")
+                            .font(.headline)
+                            .foregroundColor(.black)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(16)
+                            .padding(.horizontal)
+                    }
+
                 }
-                
-                
             }
             .padding()
             
@@ -143,13 +154,6 @@ struct ContentView: View {
         .onAppear {
             manager.mostrarTutorial = true
         }
-        .alert("Acabaram as perguntas 😅",
-               isPresented: $manager.acabouPerguntas) {
-            Button("Recomeçar") {
-                manager.resetarJogo()
-            }
-        }
-        
     }
 }
 

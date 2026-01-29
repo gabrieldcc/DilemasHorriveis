@@ -148,12 +148,19 @@ class DilemasViewModel: ObservableObject {
     }
     
     private func resetarPerguntas() {
-        perguntasRestantes =  QuestionsManager.getAllQuestions()
-            .filter { $0.modo == modo }
-            .shuffled()
-        
+        switch modo {
+        case .leve:
+            self.perguntasRestantes = PerguntasLeves.perguntas.shuffled()
+        case .pesado:
+            self.perguntasRestantes = PerguntasPesadas.perguntas.shuffled()
+        case .nerd:
+            self.perguntasRestantes = PerguntasNerd.perguntas.shuffled()
+        case .culturaBR:
+            self.perguntasRestantes = PerguntasCulturaBR.perguntas.shuffled()
+        }
         acabouPerguntas = false
         indiceAtual = 0
+        perguntaAtual = perguntasRestantes[indiceAtual]
     }
     
     func resetarJogo() {
