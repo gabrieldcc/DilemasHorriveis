@@ -197,6 +197,54 @@ class PerguntasPesadas {
             opcaoB: "Viver o resto da vida convivendo com a culpa de algo terrível que fez",
             modo: .pesado
         ),
+        
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Ter bafo de peido para sempre",
+            opcaoB: "Fazer som de peido toda vez que rir",
+            modo: .pesado
+        ),
+
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Ser obrigado a avisar sempre que vai peidar",
+            opcaoB: "Fazer xixi na calça todos os dias",
+            modo: .pesado
+        ),
+
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Morrer e seu corpo ser encontrado sobre um monte de brinquedos sexuais",
+            opcaoB: "Morrer e seu corpo ser encontrado sobre um monte de drogas",
+            modo: .pesado
+        ),
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Perder seus órgãos sexuais para sempre",
+            opcaoB: "Ganhar 100 kg permanentemente",
+            modo: .pesado
+        ),
+
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Ter todo seu histórico do WhatsApp lido em rede nacional",
+            opcaoB: "Nunca mais poder usar nenhuma rede social",
+            modo: .pesado
+        ),
+        
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Ter diarreia explosiva sempre que encontrar seu chefe",
+            opcaoB: "Ter diarreia explosiva sempre que encontrar a família do seu parceiro",
+            modo: .pesado
+        ),
+        
+        Pergunta(
+            titulo: "O que você prefere?",
+            opcaoA: "Perder a mão direita",
+            opcaoB: "Perder o pé esquerdo",
+            modo: .pesado
+        ),
 
     ]
 }

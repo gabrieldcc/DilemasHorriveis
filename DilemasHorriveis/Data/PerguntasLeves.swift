@@ -352,7 +352,302 @@ class PerguntasLeves {
             modo: .leve
         ),
 
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Aparentar ser sempre jovem, mas sofrer dores constantes da idade",
+                opcaoB: "Aparentar ser velho, mas ter um corpo totalmente saudável",
+                modo: .leve
+            ),
 
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Nunca mais precisar limpar a casa",
+                opcaoB: "Nunca mais precisar cozinhar",
+                modo: .leve
+            ),
 
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Nunca mais poder beber álcool",
+                opcaoB: "Nunca mais poder usar redes sociais",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Ter os braços substituídos por facas",
+                opcaoB: "Ter as pernas substituídas por rodas",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Descobrir que você é adotado",
+                opcaoB: "Descobrir que um de seus pais tem uma segunda família secreta",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Nunca mais conseguir falar",
+                opcaoB: "Nunca mais conseguir ler",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Se perder sozinho em uma selva",
+                opcaoB: "Se perder sozinho em um deserto",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Viver na Idade Média",
+                opcaoB: "Viver na Idade da Pedra",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Peidar incontrolavelmente no trabalho para sempre",
+                opcaoB: "Peidar incontrolavelmente em todos os primeiros encontros amorosos",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Borrar as calças em público uma vez por ano",
+                opcaoB: "Borrar as calças em privado todos os dias",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Morrer salvando 10.000 estranhos sem ninguém nunca saber",
+                opcaoB: "Viver sabendo que você poderia ter salvado 10.000 pessoas e não salvou",
+                modo: .leve
+            ),
+
+       
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Estar sempre 10 minutos atrasado para tudo",
+                opcaoB: "Chegar sempre 20 minutos antes de todo mundo",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Fazer xixi na calça sempre que alguém te cumprimentar",
+                opcaoB: "Cagar nas calças sempre que se despedir de alguém",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Que ninguém apareça no seu velório",
+                opcaoB: "Que ninguém apareça no seu casamento",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Viver no mundo real",
+                opcaoB: "Viver para sempre em uma realidade virtual onde todos os seus desejos se realizam",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Usar roupas sempre dois tamanhos maiores",
+                opcaoB: "Usar roupas sempre um tamanho menor",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Ter os olhos sempre secos",
+                opcaoB: "Ter o nariz sempre escorrendo",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Nunca mais pegar trânsito",
+                opcaoB: "Nunca mais ficar resfriado",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Conhecer um extraterrestre",
+                opcaoB: "Viajar para outro planeta",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Usar colírio feito de vinagre",
+                opcaoB: "Usar papel higiênico feito de areia",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Nunca mais poder usar calça",
+                opcaoB: "Nunca mais poder usar shorts",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Ser atacado por cachorros sempre que eles te veem",
+                opcaoB: "Ser atacado por pássaros sempre que eles te veem",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Lutar contra 100 cavalos do tamanho de pombas",
+                opcaoB: "Lutar contra 1 pomba do tamanho de um cavalo",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Ter a voz do Mickey",
+                opcaoB: "Ter a voz do Pato Donald",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Ter super audição",
+                opcaoB: "Ter um olfato extremamente apurado",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Comida grátis para sempre",
+                opcaoB: "Passagens aéreas grátis para qualquer lugar",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Usar sempre uma escova de dentes usada",
+                opcaoB: "Nunca mais poder comprar roupas novas",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Nunca mais poder usar garfo",
+                opcaoB: "Nunca mais poder usar faca",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Saber tocar todos os instrumentos musicais",
+                opcaoB: "Saber falar todas as línguas do mundo",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Saber com quem você vai se casar",
+                opcaoB: "Saber como será o futuro da sua vida resumido",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Nunca mais poder sair de casa durante o dia",
+                opcaoB: "Nunca mais poder sair de casa durante a noite",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Nunca mais poder comer comida doce",
+                opcaoB: "Nunca mais poder comer comida salgada",
+                modo: .leve
+            ),
+
+       
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Ser um gênio feio",
+                opcaoB: "Ser um idiota bonito",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Ser capaz de ler pensamentos",
+                opcaoB: "Ser capaz de prever o futuro",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Cheirar mal para sempre sem perceber",
+                opcaoB: "Conviver para sempre com alguém que cheira mal",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Viver na casa dos seus sonhos sem internet",
+                opcaoB: "Viver na sua casa atual com internet para sempre",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Ter 20 filhos ao longo da vida",
+                opcaoB: "Nunca poder ter ou adotar filhos",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Saber a data da sua morte",
+                opcaoB: "Saber a causa da sua morte",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Falar sempre rimando",
+                opcaoB: "Falar sempre cantando",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Viver uma única vida de 1.000 anos",
+                opcaoB: "Viver 10 vidas diferentes de 100 anos",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Esquecer completamente quem você é",
+                opcaoB: "Que todas as pessoas esqueçam quem você é",
+                modo: .leve
+            ),
+
+            Pergunta(
+                titulo: "O que você prefere?",
+                opcaoA: "Ter três pés",
+                opcaoB: "Ter três mãos",
+                modo: .leve
+            )
     ]
 }
