@@ -21,18 +21,20 @@ struct ContentView: View {
             
             VStack(spacing: 32) {
                 
-                VStack(spacing: 12) {
+                if !manager.erroSemPerguntas {
                     
-                    Text("Pergunta \(manager.progressoTexto)")
-                        .font(.caption)
-                        .foregroundColor(.white.opacity(0.8))
-                    
-                    ProgressView(value: manager.progressoPercentual)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .white))
-                        .animation(.easeInOut, value: manager.progressoPercentual)
+                    VStack(spacing: 12) {
+                        
+                        Text("Pergunta \(manager.progressoTexto)")
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.8))
+                        
+                        ProgressView(value: manager.progressoPercentual)
+                            .progressViewStyle(LinearProgressViewStyle(tint: .white))
+                            .animation(.easeInOut, value: manager.progressoPercentual)
+                    }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
-                
                 Spacer()
                 
                 if manager.estado == .votando {
@@ -57,44 +59,51 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
                     
-                    if manager.estado != .revelando {
-                        HStack(spacing: 16) {
-                            OptionCard(label: "A", text: pergunta.opcaoA, estado: manager.estado, onTap: {
-                                manager.tocarOpcao(.A)
-                            })
-                            OptionCard(label: "B", text: pergunta.opcaoB, estado: manager.estado, onTap: {
-                                manager.tocarOpcao(.B)
-                            })
-                        }
-                    } else {
-                        HStack(spacing: 16) {
-                            MostradorVotosCard(label: "A", votes: manager.votosA, estado: manager.estado, onTap: {
-                                manager.estado = .votando
-                            })
-                            MostradorVotosCard(label: "B", votes: manager.votosB, estado: manager.estado, onTap: {
-                                manager.estado = .votando
-                            })
+                    if !manager.erroSemPerguntas {
+                        
+                        if manager.estado != .revelando {
+                            HStack(spacing: 16) {
+                                OptionCard(label: "A", text: pergunta.opcaoA, estado: manager.estado, onTap: {
+                                    manager.tocarOpcao(.A)
+                                })
+                                OptionCard(label: "B", text: pergunta.opcaoB, estado: manager.estado, onTap: {
+                                    manager.tocarOpcao(.B)
+                                })
+                            }
+                        } else {
+                            HStack(spacing: 16) {
+                                MostradorVotosCard(label: "A", votes: manager.votosA, estado: manager.estado, onTap: {
+                                    manager.estado = .votando
+                                })
+                                MostradorVotosCard(label: "B", votes: manager.votosB, estado: manager.estado, onTap: {
+                                    manager.estado = .votando
+                                })
+                            }
                         }
                     }
                     
-                    HStack {
+                    if !manager.erroSemPerguntas {
                         
-                        Spacer()
+                        HStack {
+                            
+                            Spacer()
+                            
+                            Text("Favoritar")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                            
+                            StarButton(isFavorita: CustomQuestionsManager.shared.isFavorita(manager.perguntaAtual!),
+                                       onTap: {
+                                guard let safePerguntaAtual = manager.perguntaAtual else {
+                                    return
+                                }
+                                CustomQuestionsManager.shared.isFavorita(safePerguntaAtual) ?
+                                CustomQuestionsManager.shared.remove(safePerguntaAtual) :
+                                CustomQuestionsManager.shared.add(safePerguntaAtual)
+                                manager.atualizarStar(safePerguntaAtual.starred)
+                            })
+                        }
                         
-                        Text("Favoritar")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                        
-                        StarButton(isFavorita: CustomQuestionsManager.shared.isFavorita(manager.perguntaAtual!),
-                                   onTap: {
-                            guard let safePerguntaAtual = manager.perguntaAtual else {
-                                return
-                            }
-                            CustomQuestionsManager.shared.isFavorita(safePerguntaAtual) ?
-                            CustomQuestionsManager.shared.remove(safePerguntaAtual) :
-                            CustomQuestionsManager.shared.add(safePerguntaAtual)
-                            manager.atualizarStar(safePerguntaAtual.starred)
-                        })
                     }
                     
                     if manager.estado == .votando {
@@ -120,31 +129,33 @@ struct ContentView: View {
                         }
                     } else {
                         
-                        HStack {
-                            Button {
-                                manager.perguntaAnterior()
-                            } label: {
-                                Text("VOLTAR")
-                                    .font(.headline)
-                                    .foregroundColor(.black)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color.white)
-                                    .cornerRadius(16)
-                                    .padding(.horizontal)
-                            }
-                            
-                            Button {
-                                manager.proximaPergunta()
-                            } label: {
-                                Text("PRÓXIMA")
-                                    .font(.headline)
-                                    .foregroundColor(.black)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color.white)
-                                    .cornerRadius(16)
-                                    .padding(.horizontal)
+                        if !manager.erroSemPerguntas {
+                            HStack {
+                                Button {
+                                    manager.perguntaAnterior()
+                                } label: {
+                                    Text("VOLTAR")
+                                        .font(.headline)
+                                        .foregroundColor(.black)
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color.white)
+                                        .cornerRadius(16)
+                                        .padding(.horizontal)
+                                }
+                                
+                                Button {
+                                    manager.proximaPergunta()
+                                } label: {
+                                    Text("PRÓXIMA")
+                                        .font(.headline)
+                                        .foregroundColor(.black)
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color.white)
+                                        .cornerRadius(16)
+                                        .padding(.horizontal)
+                                }
                             }
                         }
                     }

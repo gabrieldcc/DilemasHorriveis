@@ -62,10 +62,11 @@ class DilemasViewModel: ObservableObject {
         if let primeira = perguntasRestantes.first {
             self.perguntaAtual = primeira
         } else {
+            self.erroSemPerguntas = true
             self.perguntaAtual = Pergunta(
                 titulo: "Ops! Não há perguntas para este modo ainda.",
-                opcaoA: "Voltar",
-                opcaoB: "Sair",
+                opcaoA: "",
+                opcaoB: "",
                 modo: modo,
                 starred: false
             )
