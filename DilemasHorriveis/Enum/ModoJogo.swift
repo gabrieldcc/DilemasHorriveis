@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-enum ModoJogo: String, CaseIterable, Identifiable {
+enum ModoJogo: String, CaseIterable, Identifiable, Codable {
     case leve
     case pesado
     case nerd
     case culturaBR
+    case favoritas
 
     var id: String { rawValue }
 
@@ -21,6 +22,7 @@ enum ModoJogo: String, CaseIterable, Identifiable {
         case .pesado: return "Pesado"
         case .nerd: return "Nerd"
         case .culturaBR: return "Cultura BR"
+        case .favoritas: return "Favoritas"
         }
     }
 
@@ -30,6 +32,7 @@ enum ModoJogo: String, CaseIterable, Identifiable {
         case .pesado: return "🔥"
         case .nerd: return "🤓"
         case .culturaBR: return "🇧🇷"
+        case .favoritas: return "⭐️"
         }
     }
 
@@ -50,6 +53,9 @@ enum ModoJogo: String, CaseIterable, Identifiable {
             return DilemaColors.orangeSoft
             
         case .culturaBR:
+            return DilemaColors.greenBrasil
+            
+        case .favoritas:
             return DilemaColors.greenBrasil
         }
     }

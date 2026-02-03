@@ -77,6 +77,26 @@ struct ContentView: View {
                         }
                     }
                     
+                    HStack {
+                        
+                        Spacer()
+                        
+                        Text("Favoritar")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                        
+                        StarButton(isFavorita: CustomQuestionsManager.shared.isFavorita(manager.perguntaAtual!),
+                                   onTap: {
+                            guard let safePerguntaAtual = manager.perguntaAtual else {
+                                return
+                            }
+                            CustomQuestionsManager.shared.isFavorita(safePerguntaAtual) ?
+                            CustomQuestionsManager.shared.remove(safePerguntaAtual) :
+                            CustomQuestionsManager.shared.add(safePerguntaAtual)
+                            manager.atualizarStar(safePerguntaAtual.starred)
+                        })
+                    }
+                    
                     if manager.estado == .votando {
                         VotacaoView(votosA: manager.votosA, votosB: manager.votosB, estado: manager.estado) {
                             manager.revelarVotos()

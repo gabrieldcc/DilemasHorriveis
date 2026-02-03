@@ -19,7 +19,7 @@ class DilemasViewModel: ObservableObject {
     @Published var alertaJaMostrado = false
     @Published var mostrarTutorial = true
     @Published var mostrarTutorialIcon = false
-    private var modo: ModoJogo
+    var modo: ModoJogo
     private var perguntasRestantes: [Pergunta] = []
     private var votoPendente: Opcao?
     
@@ -55,6 +55,8 @@ class DilemasViewModel: ObservableObject {
             self.perguntasRestantes = PerguntasNerd.perguntas.shuffled()
         case .culturaBR:
             self.perguntasRestantes = PerguntasCulturaBR.perguntas.shuffled()
+        case .favoritas:
+            self.perguntasRestantes = CustomQuestionsManager.shared.load().shuffled()
         }
         
         if let primeira = perguntasRestantes.first {
@@ -64,7 +66,8 @@ class DilemasViewModel: ObservableObject {
                 titulo: "Ops! Não há perguntas para este modo ainda.",
                 opcaoA: "Voltar",
                 opcaoB: "Sair",
-                modo: modo
+                modo: modo,
+                starred: false
             )
         }
     }
@@ -81,6 +84,29 @@ class DilemasViewModel: ObservableObject {
         case .B: votosB += 1
         }
     }
+    
+    func favoritarPergunta() {
+
+        guard var pergunta = perguntaAtual else { return }
+
+        pergunta.starred.toggle()
+
+        perguntaAtual = pergunta
+
+        CustomQuestionsManager.shared.update(pergunta)
+    }
+    
+    func atualizarStar(_ value: Bool) {
+
+        guard var pergunta = perguntaAtual else { return }
+
+        pergunta.starred = value
+        perguntaAtual = pergunta
+
+        CustomQuestionsManager.shared.update(pergunta)
+    }
+
+
     
     func confirmarAlerta() {
         if let opcao = votoPendente {
@@ -150,6 +176,8 @@ class DilemasViewModel: ObservableObject {
             self.perguntasRestantes = PerguntasNerd.perguntas.shuffled()
         case .culturaBR:
             self.perguntasRestantes = PerguntasCulturaBR.perguntas.shuffled()
+        case .favoritas:
+            self.perguntasRestantes = CustomQuestionsManager.shared.load().shuffled()
         }
         acabouPerguntas = false
         indiceAtual = 0
