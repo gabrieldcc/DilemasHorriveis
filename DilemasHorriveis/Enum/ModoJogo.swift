@@ -56,7 +56,7 @@ enum ModoJogo: String, CaseIterable, Identifiable, Codable {
             return DilemaColors.greenBrasil
             
         case .favoritas:
-            return DilemaColors.greenBrasil
+            return DilemaColors.yellowBrasil
         }
     }
 }

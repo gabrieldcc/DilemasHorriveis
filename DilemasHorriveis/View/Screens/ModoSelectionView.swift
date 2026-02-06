@@ -21,7 +21,7 @@ struct ModoSelectionView: View {
                     Text("Dilemas Horríveis")
                         .font(.largeTitle)
                         .fontWeight(.black)
-                        .foregroundColor(DilemaColors.orangePrimary.opacity(0.8))
+                        .foregroundColor(DilemaColors.orangePrimary)
 
                     Text("Escolha o modo")
                         .font(.headline)
